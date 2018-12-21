@@ -1,0 +1,32 @@
+{
+  "name": "algebraic-captcha",
+  "version": "0.0.1",
+  "description": "NodeJS math captcha package with algebraic formulas",
+  "main": "index.js",
+  "scripts": {
+    "commit": "npx git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tormozz48/algebraic-captcha.git"
+  },
+  "keywords": [
+    "captcha",
+    "nodejs",
+    "node",
+    "math",
+    "algebraic",
+    "formulas"
+  ],
+  "author": "andrey.kuznetsov48@yandex.ru",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tormozz48/algebraic-captcha/issues"
+  },
+  "homepage": "https://github.com/tormozz48/algebraic-captcha#readme",
+  "devDependencies": {
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0"
+  }
+}
