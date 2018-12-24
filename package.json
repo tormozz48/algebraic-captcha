@@ -4,8 +4,18 @@
   "description": "NodeJS math captcha package with algebraic formulas",
   "main": "index.js",
   "scripts": {
-    "commit": "npx git-cz",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean-build && tsc",
+    "clean-build": "rm -rf build",
+    "clean-coverage": "rm -rf coverage",
+    "lint": "prettier-tslint fix '**/*.ts'",
+    "check": "npm outdated",
+    "pretest": "npm run lint && npm run build",
+    "test": "mocha --opts mocha.opts",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- --opts mocha.opts",
+    "commit": "git-cz",
+    "precommit": "npm run lint",
+    "prepush": "npm test",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -26,10 +36,21 @@
   },
   "homepage": "https://github.com/tormozz48/algebraic-captcha#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/joi": "^14.0.1",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
+    "mocha": "^5.2.0",
     "prettier": "^1.15.3",
+    "prettier-tslint": "^0.4.1",
+    "ts-node": "^7.0.1",
     "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0"
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "joi": "^14.3.0"
   }
 }
