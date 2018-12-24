@@ -84,9 +84,9 @@ export class Config {
                 .default(10),
             operandAmount: Joi.number()
                 .integer()
-                .min(2)
+                .min(1)
                 .max(5)
-                .default(2),
+                .default(1),
             operandTypes: Joi.array()
                 .items(Joi.string())
                 .default(['+', '-'])
