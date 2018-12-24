@@ -1,4 +1,4 @@
-import {sample, random} from 'lodash';
+import {random, sample} from 'lodash';
 import {Config} from './config';
 
 export class FormulaBuilder {
@@ -8,13 +8,13 @@ export class FormulaBuilder {
         this.config = config;
     }
 
-    public generateFormula(): {formula: string[], answer: number} {
+    public generateFormula(): {formula: string[]; answer: number} {
         const {minValue, maxValue, operandAmount, operandTypes} = this.config;
 
         const formulaParts: string[] = [];
 
         let index: number = 0;
-        while(index < 2 * operandAmount + 1) {
+        while (index < 2 * operandAmount + 1) {
             if (index % 2 === 0) {
                 formulaParts.push(random(minValue, maxValue).toString());
             } else {
@@ -23,9 +23,9 @@ export class FormulaBuilder {
             index++;
         }
 
-        const answer: number = (new Function(`return ${formulaParts.join(' ')}`))();
+        const answer: number = new Function(`return ${formulaParts.join(' ')}`)();
         const formula: string[] = formulaParts.concat('=').concat('?');
 
-        return {formula, answer}
+        return {formula, answer};
     }
 }

@@ -1,8 +1,8 @@
 import {WritableStreamBuffer} from 'stream-buffers';
 import {Config} from './config';
-import {IParams} from './i-params';
 import {FormulaBuilder} from './formula-builder';
 import {FormulaDrawer} from './formula-drawer';
+import {IParams} from './i-params';
 
 export class AlgebraicCaptcha {
     private readonly INITIAL_BUFFER_SIZE: number = 100 * 1024;
@@ -18,7 +18,7 @@ export class AlgebraicCaptcha {
         this.formulaDrawer = new FormulaDrawer(this.config);
     }
 
-    public async generateCaptcha(): Promise<{image: Buffer, answer: number}> {
+    public async generateCaptcha(): Promise<{image: Buffer; answer: number}> {
         const generatedEquation = this.formulaBuilder.generateFormula();
 
         const formula: string[] = generatedEquation.formula;

@@ -1,5 +1,5 @@
+import {isNumber, max, sample} from 'lodash';
 import * as path from 'path';
-import {sample, isNumber, max} from 'lodash';
 import * as PImage from 'pureimage';
 import {Config} from './config';
 
@@ -14,7 +14,7 @@ export class FormulaDrawer {
 
         this.fonts = [
             PImage.registerFont(path.join(__dirname, '../assets/fonts/SourceSansPro-Regular.ttf'), 'Source Sans Pro')
-        ]
+        ];
     }
 
     public async draw(formula: string[]) {
@@ -30,8 +30,8 @@ export class FormulaDrawer {
                 ctx.fillRect(0, 0, width, height);
 
                 const fLength: number = formula.length;
-                const fMax:number = max(formula.map(Number).filter(isNumber));
-                const fontSize:number = this.adjustFontSize(null, {ctx, font, fMax, fLength});
+                const fMax: number = max(formula.map(Number).filter(isNumber));
+                const fontSize: number = this.adjustFontSize(null, {ctx, font, fMax, fLength});
 
                 ctx.font = `${fontSize}pt \'${font.family}\'`;
                 ctx.fillStyle = this.config.color;
@@ -40,8 +40,12 @@ export class FormulaDrawer {
                 this.drawEqualtion(ctx, formula);
 
                 resolve(img);
-            })
-        })
+            });
+        });
+    }
+
+    public getPNGBuffer(image, stream): Promise<Error | null> {
+        return PImage.encodePNGToStream(image, stream);
     }
 
     private drawEqualtion(ctx, formula: string[]) {
@@ -54,10 +58,10 @@ export class FormulaDrawer {
             const x: number = index * cellWidth + Math.floor((cellWidth - metrics.width) / 2);
             const y: number = Math.floor((cellHeight + metrics.emHeightAscent) / 2);
             ctx.fillText(char, x, y);
-        })
+        });
     }
 
-    private adjustFontSize(fontSize: null|number, params: {ctx, font, fMax: number, fLength: number}): number {
+    private adjustFontSize(fontSize: null | number, params: {ctx; font; fMax: number; fLength: number}): number {
         const {ctx, font, fMax, fLength} = params;
         fontSize = fontSize || this.INITIAL_FONT_SIZE;
         ctx.font = `${fontSize}pt \'${font.family}\'`;
@@ -68,9 +72,5 @@ export class FormulaDrawer {
         }
 
         return fontSize;
-    }
-
-    public getPNGBuffer(image, stream): Promise<Error|null> {
-        return PImage.encodePNGToStream(image, stream);
     }
 }
