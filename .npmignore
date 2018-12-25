@@ -1,0 +1,9 @@
+coverage
+docs
+examples
+src
+test
+tsconfig.json
+tslint.json
+mocha.opts
+.*
