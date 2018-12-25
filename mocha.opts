@@ -1,0 +1,6 @@
+-r ts-node/register
+--reporter spec
+--ui bdd
+--recursive
+--watch-extensions js
+test/**/*.ts
