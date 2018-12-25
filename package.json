@@ -1,56 +1,77 @@
 {
-  "name": "algebraic-captcha",
-  "version": "0.0.1",
-  "description": "NodeJS math captcha package with algebraic formulas",
-  "main": "index.js",
-  "scripts": {
-    "build": "npm run clean-build && tsc",
-    "clean-build": "rm -rf build",
-    "clean-coverage": "rm -rf coverage",
-    "lint": "prettier-tslint fix '**/*.ts'",
-    "check": "npm outdated",
-    "pretest": "npm run lint && npm run build",
-    "test": "mocha --opts mocha.opts",
-    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- --opts mocha.opts",
-    "commit": "git-cz",
-    "precommit": "npm run lint",
-    "prepush": "npm test",
-    "watch": "tsc -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tormozz48/algebraic-captcha.git"
-  },
-  "keywords": [
-    "captcha",
-    "nodejs",
-    "node",
-    "math",
-    "algebraic",
-    "formulas"
-  ],
-  "author": "andrey.kuznetsov48@yandex.ru",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/tormozz48/algebraic-captcha/issues"
-  },
-  "homepage": "https://github.com/tormozz48/algebraic-captcha#readme",
-  "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/joi": "^14.0.1",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "commitizen": "^3.0.5",
-    "cz-conventional-changelog": "^2.1.0",
-    "mocha": "^5.2.0",
-    "prettier": "^1.15.3",
-    "prettier-tslint": "^0.4.1",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0",
-    "typescript": "^3.2.2"
-  },
-  "dependencies": {
-    "joi": "^14.3.0"
-  }
+    "name": "algebraic-captcha",
+    "version": "0.0.1",
+    "description": "NodeJS math captcha package with algebraic formulas",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run clean-build && tsc",
+        "clean-build": "rm -rf build",
+        "clean-coverage": "rm -rf coverage",
+        "lint": "prettier-tslint fix '**/*.ts'",
+        "check": "npm outdated",
+        "pretest": "npm run lint && npm run build",
+        "test": "mocha --opts mocha.opts",
+        "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- --opts mocha.opts",
+        "cm": "git-cz",
+        "prepush": "npm test",
+        "watch": "tsc -w"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts}": [
+            "npm run lint",
+            "git add"
+        ],
+        "*.{json,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tormozz48/algebraic-captcha.git"
+    },
+    "keywords": [
+        "captcha",
+        "nodejs",
+        "node",
+        "math",
+        "algebraic",
+        "formulas"
+    ],
+    "author": "andrey.kuznetsov48@yandex.ru",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/tormozz48/algebraic-captcha/issues"
+    },
+    "homepage": "https://github.com/tormozz48/algebraic-captcha#readme",
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/joi": "^14.0.1",
+        "@types/mocha": "^5.2.5",
+        "chai": "^4.2.0",
+        "commitizen": "^3.0.5",
+        "cz-conventional-changelog": "^2.1.0",
+        "husky": "^1.2.1",
+        "lint-staged": "^8.1.0",
+        "mocha": "^5.2.0",
+        "prettier": "^1.15.3",
+        "prettier-tslint": "^0.4.1",
+        "ts-node": "^7.0.1",
+        "tslint": "^5.12.0",
+        "tslint-config-prettier": "^1.17.0",
+        "typescript": "^3.2.2"
+    },
+    "dependencies": {
+        "@types/lodash": "^4.14.119",
+        "@types/stream-buffers": "^3.0.2",
+        "joi": "^14.3.0",
+        "lodash": "^4.17.11",
+        "pureimage": "^0.1.6",
+        "stream-buffers": "^3.0.2"
+    }
 }
