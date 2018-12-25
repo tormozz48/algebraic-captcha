@@ -42,7 +42,7 @@ describe('src/formula-builder', () => {
     });
 
     it('should limit used operands from bottom', () => {
-        for(let i = 0; i < 50; i++) {
+        for (let i = 0; i < 50; i++) {
             const result = generateFormula_({minValue: 5});
 
             expect(Number(result.formula[0])).to.be.above(4);
@@ -51,7 +51,7 @@ describe('src/formula-builder', () => {
     });
 
     it('should limit used operands from top', () => {
-        for(let i = 0; i < 50; i++) {
+        for (let i = 0; i < 50; i++) {
             const result = generateFormula_({maxValue: 7});
 
             expect(Number(result.formula[0])).to.be.below(8);
@@ -60,7 +60,7 @@ describe('src/formula-builder', () => {
     });
 
     it('should limit used operands from top and bottom', () => {
-        for(let i = 0; i < 50; i++) {
+        for (let i = 0; i < 50; i++) {
             const result = generateFormula_({minValue: 3, maxValue: 7});
 
             expect(Number(result.formula[0])).to.be.below(8);
