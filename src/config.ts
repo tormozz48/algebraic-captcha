@@ -47,7 +47,7 @@ export class Config {
     }
 
     protected get schema(): object {
-        const colorRegexp = /^#([0-9a-f]{3}){1,2}$/i;
+        const colorRegexp: RegExp = /^#([0-9a-f]{3}){1,2}$/i;
 
         return Joi.object({
             width: Joi.number()

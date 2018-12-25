@@ -1,6 +1,6 @@
 import {expect} from 'chai';
-import {Config} from '../src/config';
-import {FormulaBuilder} from '../src/formula-builder';
+import {Config} from '../../src/config';
+import {FormulaBuilder} from '../../src/formula-builder';
 
 describe('src/formula-builder', () => {
     function generateFormula_(params = {}) {

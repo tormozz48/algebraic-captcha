@@ -11,14 +11,13 @@
         "check": "npm outdated",
         "test-unit": "mocha --opts mocha.opts",
         "test": "npm run test-unit",
-        "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- --opts mocha.opts",
         "cm": "git-cz",
-        "prepush": "npm test",
         "watch": "tsc -w"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "pre-push": "npm test"
         }
     },
     "lint-staged": {
