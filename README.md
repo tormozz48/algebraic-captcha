@@ -1,8 +1,11 @@
 # algebraic-captcha
 
-Generate CAPTCHA from algebraic formula
+Generate CAPTCHA from algebraic equation
 
+[![version](https://img.shields.io/npm/v/algebraic-captcha.svg)](https://www.npmjs.org/package/algebraic-captcha)
+[![npm license](https://img.shields.io/npm/l/algebraic-captcha.svg)](https://www.npmjs.com/package/algebraic-captcha)
 [![Build Status](https://travis-ci.org/tormozz48/algebraic-captcha.svg?branch=master)](https://travis-ci.org/tormozz48/algebraic-captcha)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Install
 
@@ -130,5 +133,35 @@ Array of used math operators
 -   default value: ['+', '-']
 
 ## Development
+
+Clone repository or its fork to local filesystem
+
+```bash
+git clone https://github.com/tormozz48/algebraic-captcha.git
+```
+
+Install npm dependencies:
+
+```bash
+npm install
+```
+
+Here are some suitable commands that can be used during development:
+
+-   `npm run build` - compile [typescript](https://www.typescriptlang.org/index.html) files
+-   `npm run lint` - run [tslint](https://palantir.github.io/tslint/) verification tool
+-   `npm test` - run tests with [mocha](https://mochajs.org)
+    (https://github.com/gotwarlost/istanbul)
+-   `npm run watch` - launch watcher for compile source files during development
+
+**Important** Use command `npm run cm` for commit your changes instead of `git commit`.
+
+## License
+
+Apache-2.0
+
+## Support
+
+Bugs, PRs, comments, suggestions welcomed!
 
 Maintainer: [Andrey Kuznetsov](andrey.kuznetsov48@yandex.ru)
