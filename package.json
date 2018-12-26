@@ -17,8 +17,8 @@
         "test-unit": "mocha --opts mocha.opts",
         "test": "npm run test-unit",
         "cm": "git-cz",
-        "prepublish": "publish-please guard",
         "watch": "tsc -w",
+        "prepublish": "publish-please guard",
         "publish-please": "publish-please"
     },
     "husky": {

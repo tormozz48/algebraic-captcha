@@ -3,6 +3,7 @@ import {Config} from './config';
 import {FormulaBuilder} from './formula-builder';
 import {FormulaDrawer} from './formula-drawer';
 import {IParams} from './i-params';
+import {IFormula} from './i-formula';
 
 export class AlgebraicCaptcha {
     private readonly INITIAL_BUFFER_SIZE: number = 100 * 1024;
@@ -19,10 +20,10 @@ export class AlgebraicCaptcha {
     }
 
     public async generateCaptcha(): Promise<{image: Buffer; answer: number}> {
-        const generatedEquation = this.formulaBuilder.generateFormula();
+        const generatedFormula: IFormula = this.formulaBuilder.generateFormula();
 
-        const formula: string[] = generatedEquation.formula;
-        const answer: number = generatedEquation.answer;
+        const formula: string[] = generatedFormula.formula;
+        const answer: number = generatedFormula.answer;
 
         const image = await this.formulaDrawer.draw(formula);
         const streamBuffer = new WritableStreamBuffer({
