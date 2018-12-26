@@ -7,4 +7,6 @@ export interface IParams {
     maxValue?: number;
     operandAmount?: number;
     operandTypes?: string[];
+    mode?: string,
+    targetSymbol?: string
 }

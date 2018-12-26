@@ -70,4 +70,35 @@ describe('src/formula-builder', () => {
             expect(Number(result.formula[2])).to.be.above(2);
         }
     });
+
+    it('should use only given operation types', () => {
+        for (let i = 0; i < 20; i++) {
+            const result = generateFormula_({operandTypes: ['+']});
+
+            expect(result.formula.some((item) => item === '+')).to.equal(true);
+            expect(result.formula.some((item) => item === '-')).to.equal(false);
+        }
+    });
+
+    it('should use custom target symbol', () => {
+        const result = generateFormula_({targetSymbol: 'x'});
+
+        const formula = result.formula;
+        const length = formula.length;
+        const last = formula[length - 1];
+
+        expect(last).to.equal('x');
+    });
+
+    it('should create equation in if "equation" mode enabled', () => {
+        const result = generateFormula_({mode: 'equation'});
+
+        const formula = result.formula;
+        const length = formula.length;
+        const last = formula[length - 1];
+
+        expect(last).to.not.equal('?');
+        expect(Number(last)).to.be.a('number');
+        expect(formula.some((item) => item === '?')).to.equal(true);
+    });
 });

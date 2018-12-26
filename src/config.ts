@@ -4,6 +4,9 @@ import {IParams} from './i-params';
 export class Config {
     private _validated: IParams;
 
+    public static readonly MODE_FORMULA: string = 'formula';
+    public static readonly MODE_EQUATION: string = 'equation';
+
     constructor(params: IParams) {
         const result = Joi.validate(params, this.schema);
 
@@ -44,6 +47,14 @@ export class Config {
 
     public get operandTypes(): string[] {
         return this._validated.operandTypes;
+    }
+
+    public isFormulaMode(): boolean {
+        return this._validated.mode === Config.MODE_FORMULA;
+    }
+
+    public get targetSymbol(): string {
+        return this._validated.targetSymbol;
     }
 
     protected get schema(): object {
@@ -89,7 +100,15 @@ export class Config {
                 .default(1),
             operandTypes: Joi.array()
                 .items(Joi.string())
-                .default(['+', '-'])
+                .default(['+', '-']),
+            mode: Joi.string()
+                .valid([Config.MODE_FORMULA, Config.MODE_EQUATION])
+                .default(Config.MODE_FORMULA),
+            targetSymbol: Joi.string()
+                .min(1)
+                .max(3)
+                .trim()
+                .default('?')
         });
     }
 }

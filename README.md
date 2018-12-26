@@ -37,7 +37,9 @@ async function generateCaptcha() {
         minValue: 1,
         maxValue: 10,
         operandAmount: 1,
-        operandTypes: ['+', '-']
+        operandTypes: ['+', '-'],
+        mode: 'formula',
+        targetSymbol: '?'
     });
 
     const {image, answer} = await algebraicCaptcha.generateCaptcha();
@@ -132,6 +134,30 @@ Array of used math operators
 
 -   default value: ['+', '-']
 
+#### `mode`
+
+Can have two available values: `formula`, `equation`
+
+In `formula` mode anwer placeholder will be put to the last position of generated string, such as:
+
+```
+5 + 2 = ?
+```
+
+In `equation` mode answer placeholder will be put on random operand position except last:
+
+```
+5 + ? = 7 //(or ? + 2 = 7)
+```
+
+-   default value: 'formula'
+
+#### `targetSymbol`
+
+Symbol which is used as placeholder for answer
+
+-   default value: '?'
+
 ## Development
 
 Clone repository or its fork to local filesystem
@@ -151,7 +177,6 @@ Here are some suitable commands that can be used during development:
 -   `npm run build` - compile [typescript](https://www.typescriptlang.org/index.html) files
 -   `npm run lint` - run [tslint](https://palantir.github.io/tslint/) verification tool
 -   `npm test` - run tests with [mocha](https://mochajs.org)
-    (https://github.com/gotwarlost/istanbul)
 -   `npm run watch` - launch watcher for compile source files during development
 
 **Important** Use command `npm run cm` for commit your changes instead of `git commit`.
