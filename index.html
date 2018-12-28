@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+        .section-title a{
+            color: #fff;
+        }
+        .grid-container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 250px 300px 50px;
+        }
+
+        .config-column-body {
+            text-align: left;
+
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .image-column-title,
+        .answer-column-title {
+            margin: auto;
+        }
+
+        .image-column-body {
+            margin: auto;
+        },
+
+        .answer-column-body {
+            margin: auto;
+        }
+    </style>
+  </head>
+  <body>
+      <h1>Algebraic Captcha Demo</h1>
+        <h2>Default</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/default.png">
+            </div>
+            <div class="answer-column-body">
+                <span>20</span>
+            </div>
+        </div>
+        <h2>Custom background</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "background": "#336699"
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/custom-background.png">
+            </div>
+            <div class="answer-column-body">
+                <span>9</span>
+            </div>
+        </div>
+        <h2>Custom color</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "color": "#11ff11"
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/custom-color.png">
+            </div>
+            <div class="answer-column-body">
+                <span>11</span>
+            </div>
+        </div>
+        <h2>Custom operand range</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "minValue": 10,
+    "maxValue": 15
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/custom-operand-range.png">
+            </div>
+            <div class="answer-column-body">
+                <span>27</span>
+            </div>
+        </div>
+        <h2>Custom operations amount</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "operandAmount": 2
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/custom-operations-amount.png">
+            </div>
+            <div class="answer-column-body">
+                <span>-1</span>
+            </div>
+        </div>
+        <h2>Use only plus operand</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "operandAmount": 2,
+    "operandTypes": [
+        "+"
+    ]
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/use-only-plus-operand.png">
+            </div>
+            <div class="answer-column-body">
+                <span>14</span>
+            </div>
+        </div>
+        <h2>Use multiply operation</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "operandTypes": [
+        "*"
+    ]
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/use-multiply-operation.png">
+            </div>
+            <div class="answer-column-body">
+                <span>30</span>
+            </div>
+        </div>
+        <h2>Mode &quot;equation&quot;</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{
+    "mode": "equation"
+}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="images/mode-equation.png">
+            </div>
+            <div class="answer-column-body">
+                <span>6</span>
+            </div>
+        </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  </script>
+  </body>
+</html>

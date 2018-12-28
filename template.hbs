@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+        .section-title a{
+            color: #fff;
+        }
+        .grid-container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 250px 300px 50px;
+        }
+
+        .config-column-body {
+            text-align: left;
+
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        .image-column-title,
+        .answer-column-title {
+            margin: auto;
+        }
+
+        .image-column-body {
+            margin: auto;
+        },
+
+        .answer-column-body {
+            margin: auto;
+        }
+    </style>
+  </head>
+  <body>
+      <h1>Algebraic Captcha Demo</h1>
+      {{#each items}}
+        <h2>{{this.name}}</h2>
+        <div class="grid-container">
+            <div>Config</div>
+            <div class="image-column-title">Image</div>
+            <div class="answer-column-title">Answer</div>
+            <div class="config-column-body">
+                <code>{{{this.config}}}</code>
+            </div>
+            <div class="image-column-body">
+                <img src="{{this.imagePath}}">
+            </div>
+            <div class="answer-column-body">
+                <span>{{this.answer}}</span>
+            </div>
+        </div>
+      {{/each}}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  </script>
+  </body>
+</html>
