@@ -7,6 +7,8 @@ Generate CAPTCHA from algebraic equation
 [![Build Status](https://travis-ci.org/tormozz48/algebraic-captcha.svg?branch=master)](https://travis-ci.org/tormozz48/algebraic-captcha)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+[DEMO](https://tormozz48.github.io/algebraic-captcha)
+
 ## Install
 
 Install package as yet another npm package:
