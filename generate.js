@@ -31,7 +31,7 @@ const template = handlebars.compile(templateStr);
 
     fs.writeFileSync(
         path.join(__dirname, 'index.html'),
-        template({items: data}),
+        template({rows: _.chunk(data, 3)}),
         {encoding: 'utf-8'}
     );
 

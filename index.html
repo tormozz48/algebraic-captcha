@@ -1,186 +1,187 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Algebraic Captcha Demo Page</title>
     <meta charset="UTF-8">
-    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <style>
-        body {
-            background-color: cornflowerblue;
-        }
-        .section-title a{
-            color: #fff;
-        }
-        .grid-container {
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns: 250px 300px 50px;
-        }
 
-        .config-column-body {
-            text-align: left;
-
-            background-color: #fff;
-            font-size: 16px;
-        }
-
-        .image-column-title,
-        .answer-column-title {
-            margin: auto;
-        }
-
-        .image-column-body {
-            margin: auto;
-        },
-
-        .answer-column-body {
-            margin: auto;
-        }
     </style>
   </head>
   <body>
-      <h1>Algebraic Captcha Demo</h1>
-        <h2>Default</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{}</code>
-            </div>
-            <div class="image-column-body">
-                <img src="images/default.png">
-            </div>
-            <div class="answer-column-body">
-                <span>20</span>
-            </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Algebraic Captcha Demo</a>
         </div>
-        <h2>Custom background</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Default</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/default.png" alt="Default">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>9</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Custom background</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/custom-background.png" alt="Custom background">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>16</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "background": "#336699"
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/custom-background.png">
-            </div>
-            <div class="answer-column-body">
-                <span>9</span>
-            </div>
+          </div>
         </div>
-        <h2>Custom color</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Custom color</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/custom-color.png" alt="Custom color">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>8</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "color": "#11ff11"
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/custom-color.png">
-            </div>
-            <div class="answer-column-body">
-                <span>11</span>
-            </div>
+          </div>
         </div>
-        <h2>Custom operand range</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Custom operand range</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/custom-operand-range.png" alt="Custom operand range">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>-3</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "minValue": 10,
     "maxValue": 15
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/custom-operand-range.png">
-            </div>
-            <div class="answer-column-body">
-                <span>27</span>
-            </div>
+          </div>
         </div>
-        <h2>Custom operations amount</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Custom operations amount</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/custom-operations-amount.png" alt="Custom operations amount">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>-4</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "operandAmount": 2
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/custom-operations-amount.png">
-            </div>
-            <div class="answer-column-body">
-                <span>-1</span>
-            </div>
+          </div>
         </div>
-        <h2>Use only plus operand</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Use only plus operand</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/use-only-plus-operand.png" alt="Use only plus operand">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>21</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "operandAmount": 2,
     "operandTypes": [
         "+"
     ]
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/use-only-plus-operand.png">
-            </div>
-            <div class="answer-column-body">
-                <span>14</span>
-            </div>
+          </div>
         </div>
-        <h2>Use multiply operation</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Use multiply operation</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/use-multiply-operation.png" alt="Use multiply operation">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>40</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "operandTypes": [
         "*"
     ]
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/use-multiply-operation.png">
-            </div>
-            <div class="answer-column-body">
-                <span>30</span>
-            </div>
+          </div>
         </div>
-        <h2>Mode &quot;equation&quot;</h2>
-        <div class="grid-container">
-            <div>Config</div>
-            <div class="image-column-title">Image</div>
-            <div class="answer-column-title">Answer</div>
-            <div class="config-column-body">
-                <code>{
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Mode &quot;equation&quot;</h3>
+            </div>
+            <div class="panel-body">
+              <div class="thumbnail">
+                <img src="images/mode-equation.png" alt="Mode &quot;equation&quot;">
+              </div>
+              <div>
+                  <p class="text-info">Answer: <strong>1</strong></p>
+                  <p class="text-info">Config:</p>
+                  <pre>{
     "mode": "equation"
-}</code>
+}</pre>
+              </div>
             </div>
-            <div class="image-column-body">
-                <img src="images/mode-equation.png">
-            </div>
-            <div class="answer-column-body">
-                <span>6</span>
-            </div>
+          </div>
         </div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
-  </script>
+      </div>
+    </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
