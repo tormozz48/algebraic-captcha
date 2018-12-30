@@ -1,6 +1,6 @@
 {
     "name": "algebraic-captcha",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "NodeJS math captcha package with algebraic formulas",
     "main": "build/index.js",
     "types": "build/index.d.ts",
