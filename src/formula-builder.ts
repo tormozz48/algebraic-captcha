@@ -1,6 +1,6 @@
-import {random, sample, isNumber} from 'lodash';
-import {IFormula} from './i-formula';
+import {isNumber, random, sample} from 'lodash';
 import {Config} from './config';
+import {IFormula} from './i-formula';
 
 export class FormulaBuilder {
     private config: Config;
@@ -11,12 +11,12 @@ export class FormulaBuilder {
 
     public generateFormula(): IFormula {
         const formulaChunks: string[] = this.generateFormulaChunks();
+        /* tslint:disable:function-constructor */
         const answer: number = new Function(`return ${formulaChunks.join(' ')}`)();
+        /* tslint:enable:function-constructor */
         const formula: string[] = formulaChunks.concat('=').concat(this.config.targetSymbol);
 
-        return this.config.isFormulaMode()
-            ? this.makeFormula(formula, answer)
-            : this.makeEquation(formula, answer);
+        return this.config.isFormulaMode() ? this.makeFormula(formula, answer) : this.makeEquation(formula, answer);
     }
 
     private generateFormulaChunks(): string[] {
@@ -44,7 +44,8 @@ export class FormulaBuilder {
      * @private
      */
     private makeFormula(formula: string[], answer: number): IFormula {
-        return <IFormula>{formula, answer};
+        const res: IFormula = {formula, answer};
+        return res;
     }
 
     /**
@@ -68,6 +69,7 @@ export class FormulaBuilder {
         formula[formula.length - 1] = answer.toString();
         answer = target;
 
-        return <IFormula>{formula, answer};
+        const res: IFormula = {formula, answer};
+        return res;
     }
 }
