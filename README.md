@@ -35,7 +35,7 @@ async function generateCaptcha() {
         width: 200,
         height: 200,
         background: '#ffffff',
-        color: '#000000',
+        noise: 1,
         minValue: 1,
         maxValue: 10,
         operandAmount: 1,
@@ -118,11 +118,11 @@ Background color of captcha image
 
 -   default value: '#ffffff'
 
-#### `color`
+#### `noise`
 
-Text color of captcha image
+Number of noise lines
 
--   default value: '#000000'
+-   default value: 1
 
 #### `operandAmount`
 
