@@ -51,6 +51,12 @@ function getConfigurations() {
             }
         },
         {
+            name: 'Custom noise',
+            config: {
+                noise: 4
+            }
+        },
+        {
             name: 'Custom operand range',
             config: {
                 minValue: 10,
