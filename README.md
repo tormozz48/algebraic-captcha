@@ -52,7 +52,7 @@ Here:
 
 -   `answer` - is numeric answer for given equation (10 for this case).
 -   `image` - image buffer
-    ![image](./docs/example1.png)
+    ![image](./docs/default.svg)
 
 Using inside express middleware.
 
