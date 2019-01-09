@@ -51,9 +51,9 @@ function getConfigurations() {
             }
         },
         {
-            name: 'Custom color',
+            name: 'Custom noise',
             config: {
-                color: '#11ff11'
+                noise: 4
             }
         },
         {
