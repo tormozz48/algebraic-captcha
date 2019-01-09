@@ -16,10 +16,10 @@ const template = handlebars.compile(templateStr);
     const data = await Promise.mapSeries(getConfigurations(), async ({name, config}) => {
         const algebraicCaptcha = new AlgebraicCaptcha(config);
         const {image, answer} = await algebraicCaptcha.generateCaptcha();
-        const imageName = `${_.kebabCase(_.toLower(name))}.png`;
+        const imageName = `${_.kebabCase(_.toLower(name))}.svg`;
         const imagePath = path.join(__dirname, 'images', imageName);
 
-        fs.writeFileSync(imagePath, image);
+        fs.writeFileSync(imagePath, image, {encoding: 'utf-8'});
 
         return {
             name,
@@ -51,9 +51,9 @@ function getConfigurations() {
             }
         },
         {
-            name: 'Custom color',
+            name: 'Custom noise',
             config: {
-                color: '#11ff11'
+                noise: 4
             }
         },
         {
