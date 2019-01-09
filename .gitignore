@@ -4,3 +4,5 @@ node_modules/
 typings/
 build/
 examples/
+demo/images/
+demo/index.html
