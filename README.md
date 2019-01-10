@@ -51,7 +51,7 @@ async function generateCaptcha() {
 Here:
 
 -   `answer` - is numeric answer for given equation (10 for this case).
--   `image` - image buffer
+-   `image` - svg image string
     ![image](./docs/default.svg)
 
 Using inside express middleware.
@@ -69,7 +69,7 @@ app.use(session({secret: 'my awesome session', resave: true}));
 app.get('/captcha', async (req, res) => {
     const {image, answer} = await algebraicCaptcha.generateCaptcha();
     req.session.captcha = answer;
-    res.writeHead(200, {'Content-Type': 'image/png'});
+    res.writeHead(200, {'Content-Type': 'image/svg+xml'});
     res.end(image);
 });
 
