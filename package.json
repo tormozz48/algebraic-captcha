@@ -81,7 +81,7 @@
     "dependencies": {
         "@types/lodash": "^4.14.168",
         "joi": "^14.3.0",
-        "lodash": "^4.17.20",
+        "lodash": "^4.17.21",
         "svg-captcha": "^1.4.0"
     }
 }
